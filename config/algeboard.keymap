@@ -5,10 +5,10 @@
  */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/rgb.h>
-#include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/rgb.h>
 
 / {
     keymap {
@@ -26,18 +26,18 @@
 
         kbfn {
             bindings = <
-          &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1     &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4      &trans  &trans        &trans  &trans           &trans           &trans           &trans           &trans           &trans
-              &trans      &trans        &trans        &trans           &trans        &trans        &trans  &trans  &out OUT_USB  &trans           &trans           &trans           &trans           &trans           &trans
-&kp C_BRI_UP  &trans      &trans        &trans        &trans  &rgb_ug RGB_TOG        &trans        &trans  &trans        &trans  &trans           &trans           &trans           &trans           &trans  &rgb_ug RGB_EFR
-&kp C_BRI_DN  &trans      &trans        &trans        &trans           &trans        &trans  &out OUT_BLE  &trans        &trans  &trans           &trans           &trans           &trans  &rgb_ug RGB_BRI  &rgb_ug RGB_EFF
-      &trans  &trans      &trans        &trans        &trans           &trans        &trans        &trans  &trans        &trans  &trans  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &rgb_ug RGB_SAI
+              &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2     &bt BT_SEL 3  &bt BT_SEL 4        &trans  &trans        &trans  &trans           &trans           &trans           &trans           &trans           &trans
+                  &trans        &trans        &trans        &trans           &trans        &trans        &trans  &trans  &out OUT_USB  &trans           &trans           &trans           &trans           &trans           &trans
+&kp C_BRI_UP      &trans        &trans        &trans        &trans  &rgb_ug RGB_TOG        &trans        &trans  &trans        &trans  &trans           &trans           &trans           &trans           &trans  &rgb_ug RGB_EFR
+&kp C_BRI_DN      &trans        &trans        &trans        &trans           &trans        &trans  &out OUT_BLE  &trans        &trans  &trans           &trans           &trans           &trans  &rgb_ug RGB_BRI  &rgb_ug RGB_EFF
+      &trans      &trans        &trans        &trans        &trans           &trans        &trans        &trans  &trans        &trans  &trans  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &rgb_ug RGB_SAI
             >;
         };
 
         hyper {
             bindings = <
         &trans  &trans  &kp RC(RG(RA(RS(N1))))  &kp RC(RG(RA(RS(N2))))  &kp RC(RG(RA(RS(N3))))  &kp RC(RG(RA(RS(N4))))     &kp RC(RG(RA(RS(N5))))  &kp RC(RG(RA(RS(N6))))  &kp RC(RG(RA(RS(N7))))  &kp RC(RG(RA(RS(N8))))    &kp RC(RG(RA(RS(N9))))    &kp RC(RG(RA(RS(N0))))  &kp RC(RG(RA(RS(MINUS))))  &kp RC(RG(RA(RS(EQUAL))))  &kp RC(RG(RA(RS(BACKSPACE))))
-        &trans  &trans   &kp RC(RG(RA(RS(Q))))   &kp RC(RG(RA(RS(W))))   &kp RC(RG(RA(RS(E))))   &kp RC(RG(RA(RS(R))))      &kp RC(RG(RA(RS(T))))                &kp HOME           &kp PAGE_DOWN             &kp PAGE_UP                   &kp END     &kp RC(RG(RA(RS(P))))   &kp RC(RG(RA(RS(LBKT))))   &kp RC(RG(RA(RS(RBKT))))  &kp RC(RG(RA(RS(BACKSLASH))))
+        &trans  &trans   &kp RC(RG(RA(RS(Q))))   &kp RC(RG(RA(RS(W))))   &kp RC(RG(RA(RS(E))))   &kp RC(RG(RA(RS(R))))      &kp RC(RG(RA(RS(T))))            &kp LG(LEFT)           &kp PAGE_DOWN             &kp PAGE_UP             &kp LG(RIGHT)     &kp RC(RG(RA(RS(P))))   &kp RC(RG(RA(RS(LBKT))))   &kp RC(RG(RA(RS(RBKT))))  &kp RC(RG(RA(RS(BACKSLASH))))
 &trans  &trans  &trans   &kp RC(RG(RA(RS(A))))   &kp RC(RG(RA(RS(S))))   &kp RC(RG(RA(RS(D))))   &kp RC(RG(RA(RS(F))))      &kp RC(RG(RA(RS(G))))                &kp LEFT                &kp DOWN                  &kp UP                 &kp RIGHT  &kp RC(RG(RA(RS(SEMI))))    &kp RC(RG(RA(RS(SQT))))  &kp RC(RG(RA(RS(ENTER))))      &kp RC(RG(RA(RS(PG_UP))))
 &trans  &trans  &trans   &kp RC(RG(RA(RS(Z))))   &kp RC(RG(RA(RS(X))))   &kp RC(RG(RA(RS(C))))   &kp RC(RG(RA(RS(V))))      &kp RC(RG(RA(RS(B))))   &kp RC(RG(RA(RS(N))))   &kp RC(RG(RA(RS(M))))            &kp C_VOL_DN           &kp C_VOLUME_UP                &kp K_MUTE                     &trans     &kp RC(RG(RA(RS(UP))))      &kp RC(RG(RA(RS(PG_DN))))
 &trans  &trans  &trans                  &trans                  &trans                  &trans                  &trans  &kp RC(RG(RA(RS(SPACE))))                  &trans                  &trans                  &trans  &kp RC(RG(RA(RS(LEFT))))  &kp RC(RG(RA(RS(DOWN))))  &kp RC(RG(RA(RS(RIGHT))))
