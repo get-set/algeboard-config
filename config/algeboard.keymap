@@ -18,6 +18,71 @@
             bindings = <&kp MINUS>;
             key-positions = <37 38>;
         };
+
+        xh_underscore {
+            bindings = <&kp UNDERSCORE>;
+            key-positions = <50 38>;
+        };
+
+        js_plus {
+            bindings = <&kp PLUS>;
+            key-positions = <34 39>;
+        };
+
+        dy_equal {
+            bindings = <&kp EQUAL>;
+            key-positions = <35 22>;
+        };
+
+        dk_lbrace {
+            bindings = <&kp LEFT_BRACE>;
+            key-positions = <35 40>;
+        };
+
+        dl_rbrace {
+            bindings = <&kp RIGHT_BRACE>;
+            key-positions = <35 41>;
+        };
+
+        vk_lbracket {
+            bindings = <&kp LEFT_BRACKET>;
+            key-positions = <52 40>;
+        };
+
+        vl_rbracket {
+            bindings = <&kp RIGHT_BRACKET>;
+            key-positions = <52 41>;
+        };
+
+        xk_lparenthesis {
+            bindings = <&kp LEFT_PARENTHESIS>;
+            key-positions = <50 40>;
+        };
+
+        xl_rparenthesis {
+            bindings = <&kp RIGHT_PARENTHESIS>;
+            key-positions = <50 41>;
+        };
+
+        vy_backslash {
+            bindings = <&kp BACKSLASH>;
+            key-positions = <52 22>;
+        };
+
+        ux_pipe {
+            bindings = <&kp PIPE>;
+            key-positions = <50 23>;
+        };
+
+        dm_grave {
+            bindings = <&kp GRAVE>;
+            key-positions = <35 55>;
+        };
+
+        bl_tide {
+            bindings = <&kp TILDE>;
+            key-positions = <53 41>;
+        };
     };
 
     keymap {
