@@ -85,35 +85,61 @@
         };
     };
 
+    macros {
+        sw_win: switchto_win {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 1 &to 1>;
+            label = "SWITCHTO_WIN";
+        };
+
+        sw_mac: switchto_mac {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 0 &to 0>;
+            label = "SWITCHTO_MAC";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         mac {
             bindings = <
-                      &kp DEL                   &kp GRAVE              &kp N1    &kp N2        &kp N3     &kp N4     &kp N5     &kp N6     &kp N7                &kp N8     &kp N9    &kp N0     &kp MINUS   &kp EQUAL  &kp BACKSPACE
-                      &kp F20                   &kp TAB                &kp Q     &kp W         &kp E      &kp R      &kp T      &kp Y      &kp U                 &kp I      &kp O     &kp P      &kp LBKT    &kp RBKT   &kp BACKSLASH
-&kp C_VOLUME_DOWN     &kp C_VOLUME_UP           &lt 2 ESCAPE           &kp A     &kp S         &kp D      &kp F      &kp G      &kp H      &kp J                 &kp K      &kp L     &kp SEMI   &kp SQT     &kp ENTER  &kp PG_UP
-&lt 1 K_MUTE          &kp RA(RC(RG(UP_ARROW)))  &kp LSHIFT             &kp Z     &kp X         &kp C      &kp V      &kp B      &kp N      &kp M                 &kp COMMA  &kp DOT   &kp SLASH  &kp RSHIFT  &kp UP     &kp PG_DN
-&kp RA(RC(RG(LEFT)))  &kp RA(RC(RG(DOWN)))      &kp RA(RC(RG(RIGHT)))  &kp LCMD  &kp LEFT_ALT  &kp LCTRL  &kp SPACE  &kp SPACE  &kp RCTRL  &sk RC(RG(LEFT_ALT))  &mo 1      &kp LEFT  &kp DOWN   &kp RIGHT
+                      &kp DEL                   &kp GRAVE              &kp N1                &kp N2    &kp N3    &kp N4     &kp N5     &kp N6     &kp N7  &kp N8             &kp N9    &kp N0     &kp MINUS   &kp EQUAL  &kp BACKSPACE
+                      &kp RA(RC(RG(DELETE)))    &kp TAB                &kp Q                 &kp W     &kp E     &kp R      &kp T      &kp Y      &kp U   &kp I              &kp O     &kp P      &kp LBKT    &kp RBKT   &kp BACKSLASH
+&kp C_VOLUME_DOWN     &kp C_VOLUME_UP           &lt 3 ESCAPE           &kp A                 &kp S     &kp D     &kp F      &kp G      &kp H      &kp J   &kp K              &kp L     &kp SEMI   &kp SQT     &kp ENTER  &kp RA(RC(RG(PG_UP)))
+&lt 2 K_MUTE          &kp RA(RC(RG(UP_ARROW)))  &kp LSHIFT             &kp Z                 &kp X     &kp C     &kp V      &kp B      &kp N      &kp M   &kp COMMA          &kp DOT   &kp SLASH  &kp RSHIFT  &kp UP     &kp RA(RC(RG(PG_DN)))
+&kp RA(RC(RG(LEFT)))  &kp RA(RC(RG(DOWN)))      &kp RA(RC(RG(RIGHT)))  &kp RS(RA(LEFT_GUI))  &kp LALT  &kp LGUI  &kp SPACE  &kp SPACE  &kp RCTRL  &mo 2   &kp RS(RA(RCTRL))  &kp LEFT  &kp DOWN   &kp RIGHT
+            >;
+        };
+
+        win {
+            bindings = <
+                      &kp DEL                   &kp GRAVE              &kp N1    &kp N2    &kp N3     &kp N4     &kp N5     &kp N6     &kp N7  &kp N8             &kp N9    &kp N0     &kp MINUS   &kp EQUAL  &kp BACKSPACE
+                      &kp RA(RC(RG(DELETE)))    &kp TAB                &kp Q     &kp W     &kp E      &kp R      &kp T      &kp Y      &kp U   &kp I              &kp O     &kp P      &kp LBKT    &kp RBKT   &kp BACKSLASH
+&kp C_VOLUME_DOWN     &kp C_VOLUME_UP           &lt 3 ESCAPE           &kp A     &kp S     &kp D      &kp F      &kp G      &kp H      &kp J   &kp K              &kp L     &kp SEMI   &kp SQT     &kp ENTER  &kp RA(RC(RG(PG_UP)))
+&lt 2 K_MUTE          &kp RA(RC(RG(UP_ARROW)))  &kp LSHIFT             &kp Z     &kp X     &kp C      &kp V      &kp B      &kp N      &kp M   &kp COMMA          &kp DOT   &kp SLASH  &kp RSHIFT  &kp UP     &kp RA(RC(RG(PG_DN)))
+&kp RA(RC(RG(LEFT)))  &kp RA(RC(RG(DOWN)))      &kp RA(RC(RG(RIGHT)))  &kp LWIN  &kp LALT  &kp LCTRL  &kp SPACE  &kp SPACE  &kp RCTRL  &mo 2   &kp RS(RA(RCTRL))  &kp LEFT  &kp DOWN   &kp RIGHT
             >;
         };
 
         kbfn {
             bindings = <
-                      &bt BT_CLR            &trans    &kp F1  &kp F2        &kp F3           &kp F4                          &kp F5        &kp F6  &kp F7        &kp F8  &kp F9           &kp F10          &kp F11          &kp F12          &trans
-                      &trans                &trans    &trans  &bt BT_SEL 1  &trans           &trans                          &trans        &trans  &out OUT_USB  &trans  &trans           &bt BT_SEL 2     &trans           &trans           &trans
-&kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &kp CAPS  &trans  &trans        &rgb_ug RGB_TOG  &trans                          &trans        &trans  &trans        &trans  &trans           &trans           &trans           &trans           &rgb_ug RGB_EFR
-&trans                &trans                &trans    &trans  &trans        &trans           &trans                          &out OUT_BLE  &trans  &bt BT_SEL 0  &trans  &trans           &trans           &trans           &rgb_ug RGB_BRI  &rgb_ug RGB_EFF
-&trans                &trans                &trans    &trans  &trans        &trans           &rgb_ug RGB_COLOR_HSB(0,0,100)  &trans        &trans  &trans        &trans  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_HUI
+                      &bt BT_CLR            &trans    &kp F1  &kp F2   &kp F3           &kp F4                          &kp F5        &kp F6  &kp F7        &kp F8  &kp F9           &kp F10          &kp F11          &kp F12          &trans
+                      &trans                &trans    &trans  &sw_win  &trans           &trans                          &trans        &trans  &out OUT_USB  &trans  &trans           &bt BT_SEL 2     &trans           &trans           &trans
+&kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &kp CAPS  &trans  &trans   &rgb_ug RGB_TOG  &trans                          &trans        &trans  &trans        &trans  &trans           &trans           &trans           &trans           &rgb_ug RGB_EFR
+&trans                &trans                &trans    &trans  &trans   &trans           &trans                          &out OUT_BLE  &trans  &sw_mac       &trans  &trans           &trans           &trans           &rgb_ug RGB_BRI  &rgb_ug RGB_EFF
+&trans                &trans                &trans    &trans  &trans   &trans           &rgb_ug RGB_COLOR_HSB(0,0,100)  &trans        &trans  &trans        &trans  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_HUI
             >;
         };
 
         hyper {
             bindings = <
         &trans  &trans  &kp RC(RG(RA(RS(N1))))  &kp RC(RG(RA(RS(N2))))  &kp RC(RG(RA(RS(N3))))  &kp RC(RG(RA(RS(N4))))     &kp RC(RG(RA(RS(N5))))     &kp RC(RG(RA(RS(N6))))  &kp RC(RG(RA(RS(N7))))  &kp RC(RG(RA(RS(N8))))  &kp RC(RG(RA(RS(N9))))    &kp RC(RG(RA(RS(N0))))    &kp RC(RG(RA(RS(MINUS))))  &kp RC(RG(RA(RS(EQUAL))))  &kp RC(RG(RA(RS(BACKSPACE))))
-        &trans  &trans  &kp RC(RG(RA(RS(Q))))   &kp RC(RG(RA(RS(W))))   &kp RC(RG(RA(RS(E))))   &kp RC(RG(RA(RS(R))))      &kp RC(RG(RA(RS(T))))      &kp HOME                &kp RS(RA(RC(RG(U))))   &kp RS(RA(RC(RG(I))))   &kp END                   &kp RC(RG(RA(RS(P))))     &kp RC(RG(RA(RS(LBKT))))   &kp RC(RG(RA(RS(RBKT))))   &kp RC(RG(RA(RS(BACKSLASH))))
-&trans  &trans  &trans  &kp RC(RG(RA(RS(A))))   &kp RC(RG(RA(RS(S))))   &kp RC(RG(RA(RS(D))))   &kp RC(RG(RA(RS(F))))      &kp RC(RG(RA(RS(G))))      &kp LEFT                &kp DOWN                &kp UP                  &kp RIGHT                 &kp RC(RG(RA(RS(SEMI))))  &kp RC(RG(RA(RS(SQT))))    &kp RC(RG(RA(RS(ENTER))))  &kp RC(RG(RA(RS(PG_UP))))
-&trans  &trans  &trans  &kp RC(RG(RA(RS(Z))))   &kp RC(RG(RA(RS(X))))   &kp RC(RG(RA(RS(C))))   &kp RC(RG(RA(RS(V))))      &kp RC(RG(RA(RS(B))))      &kp RC(RG(RA(RS(N))))   &kp RC(RG(RA(RS(M))))   &kp RA(RC(RG(COMMA)))   &kp RA(RC(RG(PERIOD)))    &kp RA(RC(RG(SLASH)))     &trans                     &kp RC(RG(RA(RS(UP))))     &kp RC(RG(RA(RS(PG_DN))))
+        &trans  &trans  &kp RC(RG(RA(RS(Q))))   &kp RC(RG(RA(RS(W))))   &kp RC(RG(RA(RS(E))))   &kp RC(RG(RA(RS(R))))      &kp RC(RG(RA(RS(T))))      &kp HOME                &kp RC(RG(RA(RS(U))))   &kp RC(RG(RA(RS(I))))   &kp END                   &kp RC(RG(RA(RS(P))))     &kp RC(RG(RA(RS(LBKT))))   &kp RC(RG(RA(RS(RBKT))))   &kp RC(RG(RA(RS(BACKSLASH))))
+&trans  &trans  &trans  &kp RC(RG(RA(RS(A))))   &kp RC(RG(RA(RS(S))))   &kp RC(RG(RA(RS(D))))   &kp RC(RG(RA(RS(F))))      &kp RC(RG(RA(RS(G))))      &kp LEFT                &kp DOWN                &kp UP                  &kp RIGHT                 &kp RC(RG(RA(RS(SEMI))))  &kp RC(RG(RA(RS(SQT))))    &kp RC(RG(RA(RS(ENTER))))  &kp PG_UP
+&trans  &trans  &trans  &kp RC(RG(RA(RS(Z))))   &kp RC(RG(RA(RS(X))))   &kp RC(RG(RA(RS(C))))   &kp RC(RG(RA(RS(V))))      &kp RC(RG(RA(RS(B))))      &kp RC(RG(RA(RS(N))))   &kp RC(RG(RA(RS(M))))   &kp RA(RC(RG(COMMA)))   &kp RA(RC(RG(PERIOD)))    &kp RA(RC(RG(SLASH)))     &trans                     &kp RC(RG(RA(RS(UP))))     &kp PG_DN
 &trans  &trans  &trans  &trans                  &trans                  &trans                  &kp RS(RA(RC(RG(SPACE))))  &kp LS(LA(LC(LG(SPACE))))  &trans                  &trans                  &trans                  &kp RC(RG(RA(RS(LEFT))))  &kp RC(RG(RA(RS(DOWN))))  &kp RC(RG(RA(RS(RIGHT))))
             >;
         };
