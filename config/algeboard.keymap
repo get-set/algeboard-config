@@ -89,14 +89,14 @@
         sw_win: switchto_win {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&bt BT_SEL 1 &to 1>;
+            bindings = <&kp RS(RA(RC(RG(PRINTSCREEN)))) &bt BT_SEL 1 &to 1>;
             label = "SWITCHTO_WIN";
         };
 
         sw_mac: switchto_mac {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&bt BT_SEL 0 &to 0>;
+            bindings = <&kp RS(RA(RC(RG(PRINTSCREEN)))) &bt BT_SEL 0 &to 0>;
             label = "SWITCHTO_MAC";
         };
     };
@@ -136,11 +136,11 @@
 
         hyper {
             bindings = <
-        &trans  &trans  &kp RC(RG(RA(RS(N1))))  &kp RC(RG(RA(RS(N2))))  &kp RC(RG(RA(RS(N3))))  &kp RC(RG(RA(RS(N4))))     &kp RC(RG(RA(RS(N5))))     &kp RC(RG(RA(RS(N6))))  &kp RC(RG(RA(RS(N7))))  &kp RC(RG(RA(RS(N8))))  &kp RC(RG(RA(RS(N9))))    &kp RC(RG(RA(RS(N0))))    &kp RC(RG(RA(RS(MINUS))))  &kp RC(RG(RA(RS(EQUAL))))  &kp RC(RG(RA(RS(BACKSPACE))))
-        &trans  &trans  &kp RC(RG(RA(RS(Q))))   &kp RC(RG(RA(RS(W))))   &kp RC(RG(RA(RS(E))))   &kp RC(RG(RA(RS(R))))      &kp RC(RG(RA(RS(T))))      &kp HOME                &kp RC(RG(RA(RS(U))))   &kp RC(RG(RA(RS(I))))   &kp END                   &kp RC(RG(RA(RS(P))))     &kp RC(RG(RA(RS(LBKT))))   &kp RC(RG(RA(RS(RBKT))))   &kp RC(RG(RA(RS(BACKSLASH))))
-&trans  &trans  &trans  &kp RC(RG(RA(RS(A))))   &kp RC(RG(RA(RS(S))))   &kp RC(RG(RA(RS(D))))   &kp RC(RG(RA(RS(F))))      &kp RC(RG(RA(RS(G))))      &kp LEFT                &kp DOWN                &kp UP                  &kp RIGHT                 &kp RC(RG(RA(RS(SEMI))))  &kp RC(RG(RA(RS(SQT))))    &kp RC(RG(RA(RS(ENTER))))  &kp PG_UP
-&trans  &trans  &trans  &kp RC(RG(RA(RS(Z))))   &kp RC(RG(RA(RS(X))))   &kp RC(RG(RA(RS(C))))   &kp RC(RG(RA(RS(V))))      &kp RC(RG(RA(RS(B))))      &kp RC(RG(RA(RS(N))))   &kp RC(RG(RA(RS(M))))   &kp RA(RC(RG(COMMA)))   &kp RA(RC(RG(PERIOD)))    &kp RA(RC(RG(SLASH)))     &trans                     &kp RC(RG(RA(RS(UP))))     &kp PG_DN
-&trans  &trans  &trans  &trans                  &trans                  &trans                  &kp RS(RA(RC(RG(SPACE))))  &kp LS(LA(LC(LG(SPACE))))  &trans                  &trans                  &trans                  &kp RC(RG(RA(RS(LEFT))))  &kp RC(RG(RA(RS(DOWN))))  &kp RC(RG(RA(RS(RIGHT))))
+        &kp RS(RA(RC(RG(DELETE))))       &kp RS(RA(RC(RG(GRAVE))))  &kp RC(RG(RA(RS(N1))))  &kp RC(RG(RA(RS(N2))))  &kp RC(RG(RA(RS(N3))))  &kp RC(RG(RA(RS(N4))))     &kp RC(RG(RA(RS(N5))))     &kp RC(RG(RA(RS(N6))))  &kp RC(RG(RA(RS(N7))))  &kp RC(RG(RA(RS(N8))))  &kp RC(RG(RA(RS(N9))))    &kp RC(RG(RA(RS(N0))))    &kp RC(RG(RA(RS(MINUS))))  &kp RC(RG(RA(RS(EQUAL))))  &kp RC(RG(RA(RS(BACKSPACE))))
+        &kp RS(RA(RC(RG(PRINTSCREEN))))  &kp RS(RA(RC(RG(TAB))))    &kp RC(RG(RA(RS(Q))))   &kp RC(RG(RA(RS(W))))   &kp RC(RG(RA(RS(E))))   &kp RC(RG(RA(RS(R))))      &kp RC(RG(RA(RS(T))))      &kp HOME                &kp RC(RG(RA(RS(U))))   &kp RC(RG(RA(RS(I))))   &kp END                   &kp RC(RG(RA(RS(P))))     &kp RC(RG(RA(RS(LBKT))))   &kp RC(RG(RA(RS(RBKT))))   &kp RC(RG(RA(RS(BACKSLASH))))
+&trans  &trans                           &trans                     &kp RC(RG(RA(RS(A))))   &kp RC(RG(RA(RS(S))))   &kp RC(RG(RA(RS(D))))   &kp RC(RG(RA(RS(F))))      &kp RC(RG(RA(RS(G))))      &kp LEFT                &kp DOWN                &kp UP                  &kp RIGHT                 &kp RC(RG(RA(RS(SEMI))))  &kp RC(RG(RA(RS(SQT))))    &kp RC(RG(RA(RS(ENTER))))  &kp PG_UP
+&trans  &trans                           &trans                     &kp RC(RG(RA(RS(Z))))   &kp RC(RG(RA(RS(X))))   &kp RC(RG(RA(RS(C))))   &kp RC(RG(RA(RS(V))))      &kp RC(RG(RA(RS(B))))      &kp RC(RG(RA(RS(N))))   &kp RC(RG(RA(RS(M))))   &kp RA(RC(RG(COMMA)))   &kp RA(RC(RG(PERIOD)))    &kp RA(RC(RG(SLASH)))     &trans                     &kp RC(RG(RA(RS(UP))))     &kp PG_DN
+&trans  &trans                           &trans                     &trans                  &trans                  &trans                  &kp RS(RA(RC(RG(SPACE))))  &kp LS(LA(LC(LG(SPACE))))  &trans                  &trans                  &trans                  &kp RC(RG(RA(RS(LEFT))))  &kp RC(RG(RA(RS(DOWN))))  &kp RC(RG(RA(RS(RIGHT))))
             >;
         };
     };
