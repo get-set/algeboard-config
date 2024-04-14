@@ -89,15 +89,22 @@
         sw_win: switchto_win {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&bt BT_SEL 1 &to 1>;
+            bindings = <&to 1 &bt BT_SEL 1>;
             label = "SWITCHTO_WIN";
         };
 
         sw_mac: switchto_mac {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&bt BT_SEL 0 &to 0>;
+            bindings = <&to 0 &bt BT_SEL 0>;
             label = "SWITCHTO_MAC";
+        };
+
+        macro_test: macro_test {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RS(RA(N0)) &to 1 &kp RA(RC(N9)) &to 0>;
+            label = "MACRO_TEST";
         };
     };
 
@@ -130,7 +137,7 @@
                       &trans                &trans    &trans  &sw_win  &trans           &trans                          &trans        &trans  &out OUT_USB  &trans  &trans           &bt BT_SEL 2     &trans           &trans           &trans
 &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &kp CAPS  &trans  &trans   &rgb_ug RGB_TOG  &trans                          &trans        &trans  &trans        &trans  &trans           &trans           &trans           &trans           &rgb_ug RGB_EFR
 &trans                &trans                &trans    &trans  &trans   &trans           &trans                          &out OUT_BLE  &trans  &sw_mac       &trans  &trans           &trans           &trans           &rgb_ug RGB_BRI  &rgb_ug RGB_EFF
-&trans                &trans                &trans    &trans  &trans   &trans           &rgb_ug RGB_COLOR_HSB(0,0,100)  &trans        &trans  &trans        &trans  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_HUI
+&trans                &trans                &trans    &trans  &trans   &trans           &rgb_ug RGB_COLOR_HSB(0,0,100)  &macro_test   &trans  &trans        &trans  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_HUI
             >;
         };
 
