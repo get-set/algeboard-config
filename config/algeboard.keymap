@@ -96,8 +96,15 @@
         sw_mac: switchto_mac {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LC(LA(BACKSLASH)) &to 0 &bt BT_SEL 0>;
+            bindings = <&kp LC(LA(LEFT_BRACKET)) &to 0 &bt BT_SEL 0>;
             label = "SWITCHTO_MAC";
+        };
+
+        sw_studio: sw_studio {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LA(RIGHT_BRACKET)) &to 0 &bt BT_SEL 2>;
+            label = "SW_STUDIO";
         };
     };
 
@@ -126,11 +133,11 @@
 
         kbfn {
             bindings = <
-                      &bt BT_CLR            &trans    &kp F1  &kp F2   &kp F3           &kp F4                          &kp F5        &kp F6  &kp F7        &kp F8  &kp F9           &kp F10          &kp F11          &kp F12          &trans
-                      &trans                &trans    &trans  &sw_win  &trans           &trans                          &trans        &trans  &out OUT_USB  &trans  &trans           &bt BT_SEL 2     &trans           &trans           &trans
-&kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &kp CAPS  &trans  &trans   &rgb_ug RGB_TOG  &trans                          &trans        &trans  &trans        &trans  &trans           &trans           &trans           &trans           &rgb_ug RGB_EFR
-&trans                &trans                &trans    &trans  &trans   &trans           &trans                          &out OUT_BLE  &trans  &sw_mac       &trans  &trans           &trans           &trans           &rgb_ug RGB_BRI  &rgb_ug RGB_EFF
-&trans                &trans                &trans    &trans  &trans   &trans           &rgb_ug RGB_COLOR_HSB(0,0,100)  &trans        &trans  &trans        &trans  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_HUI
+                      &bt BT_CLR            &trans    &kp F1  &kp F2      &kp F3           &kp F4                          &kp F5        &kp F6  &kp F7        &kp F8  &kp F9           &kp F10          &kp F11          &kp F12          &trans
+                      &trans                &trans    &trans  &sw_win     &trans           &trans                          &trans        &trans  &out OUT_USB  &trans  &trans           &bt BT_SEL 2     &trans           &trans           &trans
+&kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &kp CAPS  &trans  &sw_studio  &rgb_ug RGB_TOG  &trans                          &trans        &trans  &trans        &trans  &trans           &trans           &trans           &trans           &rgb_ug RGB_EFR
+&trans                &trans                &trans    &trans  &trans      &trans           &trans                          &out OUT_BLE  &trans  &sw_mac       &trans  &trans           &trans           &trans           &rgb_ug RGB_BRI  &rgb_ug RGB_EFF
+&trans                &trans                &trans    &trans  &trans      &trans           &rgb_ug RGB_COLOR_HSB(0,0,100)  &trans        &trans  &trans        &trans  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_HUI
             >;
         };
 
